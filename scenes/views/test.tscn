@@ -8,7 +8,7 @@ size = Vector2(1270, 68)
 [node name="Root" type="Node2D"]
 
 [node name="Tito" parent="." instance=ExtResource("1_6whkw")]
-position = Vector2(96, 120)
+position = Vector2(92, 114)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(141, 479)

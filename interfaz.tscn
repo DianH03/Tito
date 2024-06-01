@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://yqyqxnrv2u1y"]
+[gd_scene load_steps=6 format=3 uid="uid://yqyqxnrv2u1y"]
 
+[ext_resource type="Script" path="res://interfaz.gd" id="1_2drki"]
 [ext_resource type="Texture2D" uid="uid://buivk261wepyg" path="res://icon.svg" id="1_xut0p"]
 
 [sub_resource type="Animation" id="Animation_2k1xi"]
@@ -38,8 +39,9 @@ _data = {
 "SET_TEXTO": SubResource("Animation_kdgun")
 }
 
-[node name="INTERFAZ" type="CanvasLayer"]
+[node name="INTERFAZ" type="CanvasLayer" groups=["Azufre", "Baron", "Carbon", "Maton1", "Maton2", "Mia", "Nitrato", "Tito"]]
 process_mode = 1
+script = ExtResource("1_2drki")
 
 [node name="FONDO" type="ColorRect" parent="."]
 offset_top = 486.0
