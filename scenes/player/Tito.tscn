@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://bma3byfkqry68"]
+[gd_scene load_steps=26 format=3 uid="uid://bma3byfkqry68"]
 
 [ext_resource type="Texture2D" uid="uid://b3a7k3am2bh1f" path="res://assets/Tito/brazo_sup_izq.PNG" id="1_kwaiw"]
+[ext_resource type="Script" path="res://scenes/player/Tito.gd" id="1_u2frd"]
 [ext_resource type="Texture2D" uid="uid://bri2horrqsvos" path="res://assets/Tito/mano_izq.PNG" id="2_cpj64"]
 [ext_resource type="Texture2D" uid="uid://4kkn7870x0df" path="res://assets/Tito/brazo_inf_izq.PNG" id="3_fmh78"]
 [ext_resource type="Texture2D" uid="uid://jo3jsq10bgny" path="res://assets/Tito/pierna_izq_sup.PNG" id="4_q2h5y"]
@@ -16,6 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://plqlityttkue" path="res://assets/Tito/brazo_sup_der.PNG" id="14_i2bec"]
 [ext_resource type="Texture2D" uid="uid://bxy2ru8jq6cl4" path="res://assets/Tito/mano_der.PNG" id="15_vxbdv"]
 [ext_resource type="Texture2D" uid="uid://sqsf5oi2sl6n" path="res://assets/Tito/brazo_inf_der.PNG" id="16_pxccu"]
+[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="17_d04yg"]
+[ext_resource type="Script" path="res://scripts/PlayerIdle.gd" id="18_b00os"]
+[ext_resource type="Script" path="res://scripts/PlayerRun.gd" id="19_4x7da"]
+[ext_resource type="Script" path="res://scripts/PlayerJump.gd" id="20_2e58w"]
+[ext_resource type="Script" path="res://scripts/PlayerFall.gd" id="21_ojcbo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq1l2"]
 
@@ -28,6 +34,7 @@ _data = {
 }
 
 [node name="Tito" type="CharacterBody2D"]
+script = ExtResource("1_u2frd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pq1l2")
@@ -35,7 +42,7 @@ shape = SubResource("RectangleShape2D_pq1l2")
 [node name="SkeletonParts" type="Node" parent="."]
 
 [node name="BrazoSupIzq" type="Sprite2D" parent="SkeletonParts"]
-position = Vector2(47, 1)
+position = Vector2(47, 0.99999)
 rotation = -0.0349015
 texture = ExtResource("1_kwaiw")
 
@@ -51,25 +58,22 @@ texture = ExtResource("3_fmh78")
 
 [node name="PiernaIzqSup" type="Sprite2D" parent="SkeletonParts"]
 position = Vector2(15.8845, 102.985)
-rotation = -0.00812535
+rotation = -0.00812501
 texture = ExtResource("4_q2h5y")
 
 [node name="PiernaIzqInf" type="Sprite2D" parent="SkeletonParts"]
 position = Vector2(32.6767, 170.727)
-rotation = 0.0579953
-scale = Vector2(1, 1)
+rotation = 0.0579949
 texture = ExtResource("5_hvjx5")
 
 [node name="PieIzq" type="Sprite2D" parent="SkeletonParts"]
 position = Vector2(50.6043, 221.668)
-rotation = 0.0216261
-scale = Vector2(1, 1)
+rotation = 0.0216256
 texture = ExtResource("6_1vg8u")
 
 [node name="PiernaDerSup" type="Sprite2D" parent="SkeletonParts"]
 position = Vector2(-13.7136, 108.681)
 rotation = 0.135085
-scale = Vector2(1, 1)
 texture = ExtResource("7_iclgj")
 
 [node name="PiernaDerInf" type="Sprite2D" parent="SkeletonParts"]
@@ -79,7 +83,7 @@ texture = ExtResource("8_blc33")
 
 [node name="PieDer" type="Sprite2D" parent="SkeletonParts"]
 position = Vector2(-25.0334, 221.233)
-rotation = 0.00258845
+rotation = 0.00258899
 texture = ExtResource("9_1ym3a")
 
 [node name="TorsoInferior" type="Sprite2D" parent="SkeletonParts"]
@@ -87,6 +91,7 @@ position = Vector2(1, 50)
 texture = ExtResource("10_lkaq4")
 
 [node name="TorsoSuperior" type="Sprite2D" parent="SkeletonParts"]
+position = Vector2(1.19209e-06, 1.90735e-05)
 rotation = -0.0349015
 texture = ExtResource("11_iyqib")
 
@@ -101,18 +106,20 @@ rotation = -0.0349015
 texture = ExtResource("13_3yxue")
 
 [node name="BrazoSupDer" type="Sprite2D" parent="SkeletonParts"]
-position = Vector2(-45, 1)
+position = Vector2(-45, 0.999973)
 rotation = -0.0349015
 texture = ExtResource("14_i2bec")
 
 [node name="ManoDer" type="Sprite2D" parent="SkeletonParts"]
 position = Vector2(-79.5473, 68.7853)
 rotation = -0.283033
+scale = Vector2(1, 1)
 texture = ExtResource("15_vxbdv")
 
 [node name="BrazoInfDer" type="Sprite2D" parent="SkeletonParts"]
 position = Vector2(-63.8827, 36.9636)
 rotation = -0.283033
+scale = Vector2(1, 1)
 texture = ExtResource("16_pxccu")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
@@ -165,6 +172,7 @@ remote_path = NodePath("../../../../../../SkeletonParts/BrazoSupDer")
 [node name="ArmRight" type="Bone2D" parent="Skeleton2D/base/BodyDown/BodyUp/ShoulderRight"]
 position = Vector2(-27, 28)
 rotation = -0.248131
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -27, 28)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/base/BodyDown/BodyUp/ShoulderRight/ArmRight"]
@@ -216,7 +224,6 @@ remote_path = NodePath("../../../../SkeletonParts/PiernaIzqSup")
 [node name="LegsDownLeft" type="Bone2D" parent="Skeleton2D/base/LegsUpLeft"]
 position = Vector2(0, 77)
 rotation = 0.269839
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 77)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/base/LegsUpLeft/LegsDownLeft"]
@@ -237,7 +244,6 @@ remote_path = NodePath("../../../../../../SkeletonParts/PieIzq")
 [node name="LegsRughtUp" type="Bone2D" parent="Skeleton2D/base"]
 position = Vector2(-12, -27)
 rotation = 0.135085
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -12, -27)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/base/LegsRughtUp"]
@@ -266,3 +272,30 @@ remote_path = NodePath("../../../../../../SkeletonParts/PieDer")
 libraries = {
 "": SubResource("AnimationLibrary_lo54x")
 }
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
+script = ExtResource("17_d04yg")
+default_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("18_b00os")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("19_4x7da")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("20_2e58w")
+
+[node name="JumpTimer" type="Timer" parent="StateMachine/Jump"]
+wait_time = 0.4
+one_shot = true
+
+[node name="Fall" type="Node" parent="StateMachine"]
+script = ExtResource("21_ojcbo")
+
+[node name="CoyoteTimer" type="Timer" parent="StateMachine/Fall"]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="StateMachine/Jump/JumpTimer" to="StateMachine/Jump" method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="StateMachine/Fall/CoyoteTimer" to="StateMachine/Fall" method="_on_coyote_timer_timeout"]

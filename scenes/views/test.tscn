@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcqfrjbc4qn67"]
+[gd_scene load_steps=3 format=3 uid="uid://bcqfrjbc4qn67"]
 
 [ext_resource type="PackedScene" uid="uid://bma3byfkqry68" path="res://scenes/player/Tito.tscn" id="1_6whkw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdeow"]
+size = Vector2(1270, 68)
 
 [node name="Root" type="Node2D"]
 
 [node name="Tito" parent="." instance=ExtResource("1_6whkw")]
 position = Vector2(96, 120)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(141, 479)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(443, 135)
+shape = SubResource("RectangleShape2D_tdeow")
