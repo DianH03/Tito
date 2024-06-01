@@ -90,3 +90,5 @@ text = ">"
 libraries = {
 "": SubResource("AnimationLibrary_ird1e")
 }
+
+[connection signal="pressed" from="BOTON" to="." method="_on_boton_pressed"]
