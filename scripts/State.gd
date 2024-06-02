@@ -2,7 +2,7 @@ extends Node
 class_name State
 
 var parent: StateMachine
-var animated_sprite: AnimatedSprite2D 
+var animation_player: AnimationPlayer
 var character_body: CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.

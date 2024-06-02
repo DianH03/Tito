@@ -4,7 +4,7 @@ class_name Idle
 var paren_node = self.get_parent()
 # Called when the node enters the scene tree for the first time.
 func on_enter(last_state):
-	pass	
+	animation_player.play('Idle')	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func physics_process(delta):

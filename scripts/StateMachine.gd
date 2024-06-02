@@ -2,17 +2,19 @@ extends Node
 class_name StateMachine
 
 @export var default_state: State
+@export var animation_player: AnimationPlayer
+@export var skeleton: Skeleton2D
 
 @onready var character_body: CharacterBody2D = self.get_parent()  
 
 var states = { }
 var current_state: State
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 2
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 4
 
 var properties = {
-	'jump_velocity': -200,
-	'velocity': 200,
+	'jump_velocity': -400,
+	'velocity': 350,
 	'gravity': gravity
 }
 
@@ -21,6 +23,7 @@ func _ready():
 	current_state = default_state
 	for child: State in self.get_children():
 		child.parent = self
+		child.animation_player = animation_player
 		child.character_body = character_body
 		states[child.name] = child
 	current_state.on_enter(null)

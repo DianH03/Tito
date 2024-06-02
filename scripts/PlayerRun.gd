@@ -3,7 +3,7 @@ extends State
 
 # Called when the node enters the scene tree for the first time.
 func on_enter(last_state):
-	pass
+	animation_player.play('Run')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func physics_process(delta):
@@ -14,9 +14,9 @@ func physics_process(delta):
 	character_body.velocity.x = axis * parent.properties.velocity
 	
 	if character_body.velocity.x < 0:
-		pass
+		parent.skeleton.scale.x = -1
 	elif character_body.velocity.x > 0:
-		pass
+		parent.skeleton.scale.x = 1
 	if not character_body.is_on_floor():
 		parent.transition_to('Fall')
 	if Input.is_action_just_pressed('ui_accept'):
