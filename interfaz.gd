@@ -75,11 +75,13 @@ func poner_TEXTO (TEXTO:String, NPC:int, IMAGEN:Texture) -> void:
 	Anim.play("SET_TEXTO")
 
 
-#Funcion de Mia fALTA
-func _on_Mia_body_entered(body:Node) -> void:
-	if body.is_in_group('Mia'):
+#Funcion de Mia
+func _on_mia_body_entered(body):
+	if body.is_in_group('PERSONAJES'):
 		poner_TEXTO(EscenaMia[chats],NPCS.Mia,IMAGENES[Imagenes[secuenciaNPCEscena1[chats]]])
 		chats +=1
+
+
 
 #Funcion de Maton1
 func _on_maton_1_body_entered(body):
@@ -97,13 +99,10 @@ func _on_maton_2_body_entered(body):
 
 
 # falta el baron 
+func _on_baron_body_entered(body):
 	if body.is_in_group('PERSONAJES'):
 		poner_TEXTO(EscenaBaron[chats],NPCS.Baron,IMAGENES[[secuenciaNPCEscena4[chats]]])
 		chats +=1
-
-
-
-#--------------------------------------------
 
 func _on_boton_pressed():
 	match npc: 
@@ -144,6 +143,10 @@ func _on_boton_pressed():
 				chats = 0
 				hide()
 				get_tree().paused = false
+
+
+
+
 
 
 
