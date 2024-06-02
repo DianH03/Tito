@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://buivk261wepyg" path="res://icon.svg" id="1_xut0p"]
 
 [sub_resource type="Animation" id="Animation_2k1xi"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -12,10 +11,10 @@ tracks/0/path = NodePath("TEXTO:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_kdgun"]
@@ -40,7 +39,7 @@ _data = {
 }
 
 [node name="INTERFAZ" type="CanvasLayer" node_paths=PackedStringArray("Imagen", "Anim") groups=["Azufre", "Baron", "Carbon", "Maton1", "Maton2", "Mia", "Nitrato", "Tito"]]
-process_mode = 1
+process_mode = 3
 script = ExtResource("1_2drki")
 Imagen = NodePath("FONDO/IMAGEN")
 Anim = NodePath("AnimationPlayer")

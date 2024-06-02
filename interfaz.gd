@@ -110,38 +110,38 @@ func _on_boton_pressed():
 		
 		NPCS.Mia:
 			if chats < EscenaMia.size():
-				poner_TEXTO(EscenaMia[chats],NPCS.Mia,IMAGENES[Imagenes[secuenciaNPCEscena1[chats]]])
+				poner_TEXTO(EscenaMia[chats],NPCS.Mia,IMAGENES[Imagenes[secuenciaNPCEscena1[chats  % 2]]])
 				chats +=1
 			else:
 				#Conversacion acabo
-				chats -= EscenaMia.size()
+				chats = 0
 				hide()
 				get_tree().paused = false
 		NPCS.Maton1:
 			if chats < EscenaMaton1.size():
-				poner_TEXTO(EscenaMaton1[chats],NPCS.Maton1,IMAGENES[Imagenes[secuenciaNPCEscena2[chats]]])
+				poner_TEXTO(EscenaMaton1[chats],NPCS.Maton1,IMAGENES[Imagenes[secuenciaNPCEscena2[chats % 2]]])
 				chats +=1
 			else:
 				#Conversacion acabo
-				chats -= EscenaMaton1.size()
+				chats = 0
 				hide()
 				get_tree().paused = false
 		NPCS.Maton2:
 			if chats < EscenaMaton2.size():
-				poner_TEXTO(EscenaMaton2[chats],NPCS.Maton2,IMAGENES[Imagenes[secuenciaNPCEscena3[chats]]])
+				poner_TEXTO(EscenaMaton2[chats],NPCS.Maton2,IMAGENES[Imagenes[secuenciaNPCEscena3[chats  % 2]]])
 				chats +=1
 			else:
 				#Conversacion acabo
-				chats -= EscenaMaton2.size()
+				chats = 0
 				hide()
 				get_tree().paused = false
 		NPCS.Baron:
 			if chats < EscenaBaron.size():
-				poner_TEXTO(EscenaBaron[chats],NPCS.Baron,IMAGENES[Imagenes[secuenciaNPCEscena4[chats]]])
+				poner_TEXTO(EscenaBaron[chats],NPCS.Baron,IMAGENES[Imagenes[secuenciaNPCEscena4[chats  % 2]]])
 				chats +=1
 			else:
 				#Conversacion acabo
-				chats -= EscenaBaron.size()
+				chats = 0
 				hide()
 				get_tree().paused = false
 
