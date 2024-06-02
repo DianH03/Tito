@@ -6,6 +6,10 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Button" type="Button" parent="CanvasLayer"]
 offset_left = 529.0
 offset_top = 343.0
