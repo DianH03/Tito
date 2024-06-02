@@ -30,7 +30,7 @@ const IMAGENES : Dictionary = {
 
 #--------------------------------------------------------
 const EscenaMia : Array = [
-	'Mia : Necesito carbon, pero no el tipo que piensas. ¿Puedes ayudarme a encontrar algo que haga chispas pero no explote?.',#0
+	'Tito : Necesito carbon, pero no el tipo que piensas. ¿Puedes ayudarme a encontrar algo que haga chispas pero no explote?.',#0
 	'Mia : Por supuesto, !vamos a iluminar el cielo, no a quemarlo!'#1
 ]
 const secuenciaNPCEscena1 : Array = [0,4]
@@ -72,70 +72,33 @@ func poner_TEXTO (TEXTO:String, NPC:int, IMAGEN:Texture) -> void:
 	%ANIM.play("SET_TEXTO")
 
 
-#Funcion de Mia
+#Funcion de Mia fALTA
 func _on_Mia_body_entered(body:Node) -> void:
 	if body.is_in_group('Mia'):
 		poner_TEXTO(EscenaMia[chats],NPCS.Mia,IMAGENES[Imagenes[secuenciaNPCEscena1[chats]]])
 		chats +=1
 
 #Funcion de Maton1
-func _on_Maton1_body_entered(body:Node) -> void:
-	if body.is_in_group('Maton1'):
+func _on_maton_1_body_entered(body):
+	if body.is_in_group('PERSONAJES'):
 		poner_TEXTO(EscenaMaton1[chats],NPCS.Maton1,IMAGENES[Imagenes[secuenciaNPCEscena2[chats]]])
 		chats +=1
 
 
+
 #Funcion de Maton2
-func _on_Maton2_body_entered(body:Node) -> void:
-	if body.is_in_group('Maton2'):
+func _on_maton_2_body_entered(body):
+	if body.is_in_group('PERSONAJES'):
 		poner_TEXTO(EscenaMaton2[chats],NPCS.Maton2,IMAGENES[Imagenes[secuenciaNPCEscena3[chats]]])
 		chats +=1
-		
-#Funcion de Baron
-func _on_Baron_body_entered(body:Node) -> void:
-	if body.is_in_group('Baron'):
+
+
+# falta el baron 
+	if body.is_in_group('PERSONAJES'):
 		poner_TEXTO(EscenaBaron[chats],NPCS.Baron,IMAGENES[[secuenciaNPCEscena4[chats]]])
 		chats +=1
 
 
-	match npc: 
-		
-		NPCS.Mia:
-			if chats < EscenaMia.size():
-				poner_TEXTO(EscenaMia[chats],NPCS.Mia,IMAGENES[Imagenes[secuenciaNPCEscena1[chats]]])
-				chats +=1
-			else:
-				#Conversacion acabo
-				chats -= EscenaMia.size()
-				hide()
-				get_tree().paused = false
-		NPCS.Maton1:
-			if chats < EscenaMaton1.size():
-				poner_TEXTO(EscenaMaton1[chats],NPCS.Maton1,IMAGENES[Imagenes[secuenciaNPCEscena2[chats]]])
-				chats +=1
-			else:
-				#Conversacion acabo
-				chats -= EscenaMaton1.size()
-				hide()
-				get_tree().paused = false
-		NPCS.Maton2:
-			if chats < EscenaMaton2.size():
-				poner_TEXTO(EscenaMaton2[chats],NPCS.Maton2,IMAGENES[Imagenes[secuenciaNPCEscena3[chats]]])
-				chats +=1
-			else:
-				#Conversacion acabo
-				chats -= EscenaMaton2.size()
-				hide()
-				get_tree().paused = false
-		NPCS.Mia:
-			if chats < EscenaBaron.size():
-				poner_TEXTO(EscenaBaron[chats],NPCS.Baron,IMAGENES[Imagenes[secuenciaNPCEscena4[chats]]])
-				chats +=1
-			else:
-				#Conversacion acabo
-				chats -= EscenaBaron.size()
-				hide()
-				get_tree().paused = false
 
 #--------------------------------------------
 
@@ -178,4 +141,7 @@ func _on_boton_pressed():
 				chats -= EscenaBaron.size()
 				hide()
 				get_tree().paused = false
+
+
+
 

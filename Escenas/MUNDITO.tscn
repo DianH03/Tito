@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://btbto7x4u1sg"]
+[gd_scene load_steps=18 format=3 uid="uid://btbto7x4u1sg"]
 
 [ext_resource type="Texture2D" uid="uid://cxt87n1ixxeix" path="res://Free Pixel Art Forest/Free Pixel Art Forest/Preview/Background.png" id="1_fmpxm"]
 [ext_resource type="Texture2D" uid="uid://fu7nfdl5255k" path="res://Rocky Roads/Deco/water_a_8frames.png" id="2_qavr8"]
@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://d3bhirl5d8vic" path="res://oak_woods_v1.0/oak_woods_tileset.png" id="5_atwvx"]
 [ext_resource type="Texture2D" uid="uid://dptyfrcex5uc6" path="res://Rocky Roads/Objects/treasure_chest.png" id="6_b1c2p"]
 [ext_resource type="Texture2D" uid="uid://dyo45mbvq0txx" path="res://Rocky Roads/Objects/coin_gold.png" id="7_dgh8y"]
-[ext_resource type="PackedScene" uid="uid://i7y2ddp468ep" path="res://scenes/player.tscn" id="8_ifr7y"]
-[ext_resource type="PackedScene" uid="uid://bma3byfkqry68" path="res://scenes/player/Tito.tscn" id="9_x0ans"]
-[ext_resource type="PackedScene" uid="uid://yqyqxnrv2u1y" path="res://interfaz.tscn" id="10_8cnoj"]
+[ext_resource type="PackedScene" uid="uid://bma3byfkqry68" path="res://scenes/player/Tito.tscn" id="8_7po67"]
+[ext_resource type="PackedScene" uid="uid://dcpr82mseaify" path="res://scenes/DialogEnemy/maton_1.tscn" id="9_ejxhc"]
+[ext_resource type="PackedScene" uid="uid://yqyqxnrv2u1y" path="res://interfaz.tscn" id="9_xf1ds"]
+[ext_resource type="PackedScene" uid="uid://ey8n2m5jdx84" path="res://scenes/DialogEnemy/maton_2.tscn" id="10_sidkh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8jjao"]
 texture = ExtResource("3_jo326")
@@ -1730,17 +1731,21 @@ tile_set = SubResource("TileSet_g4c11")
 format = 2
 layer_0/tile_data = PackedInt32Array(-5, 1114115, 76, -4, 1114115, 76, -3, 1114115, 76, -2, 1114115, 76, -1, 1114115, 76, -65536, 1114115, 76, -65535, 1114115, 76, -65534, 1114115, 76, -65533, 1114115, 76, -65532, 1114115, 76, -65531, 1114115, 76, -65530, 1114115, 76, -65529, 1114115, 76, -65528, 1114115, 76, -65527, 1114115, 76, -65526, 1114115, 76, -65525, 1114115, 76, -65524, 1114115, 76, -65523, 1114115, 76, -65522, 1114115, 76, -65521, 1114115, 74, -65520, 1114115, 74, -65519, 1769475, 74, -65518, 1900547, 75, -65517, 1900547, 75, -65516, 1245187, 74, -65515, 1245187, 74, -65514, 1245187, 74, -65513, 1245187, 74, -65511, 1245187, 74, -65512, 1245187, 74, -65510, 1245187, 74, -131057, 5, 2, -196593, 5, 1, -196592, 65541, 1, -196591, 131077, 1, -131056, 65541, 2, -131055, 131077, 2, -131045, 3407875, 73, -65509, 4063235, 77, -131044, 3080195, 74, -65508, 4063235, 77, -196580, 3342339, 73, -196579, 3604483, 74, -131043, 3080195, 74, -65507, 3407875, 74, -65506, 3407875, 74, -131042, 3342339, 75, -131041, 3342339, 75, -196577, 3342339, 75, -196578, 3342339, 75, -65505, 3342339, 75, -131040, 1835011, 75, -196576, 1835011, 75, -196575, 1835011, 75, -131039, 1835011, 75, -65504, 1835011, 75, -65503, 1835011, 75, -196574, 1835011, 75, -131038, 1835011, 75, -65502, 1835011, 75, -196573, 1835011, 75, -131037, 1835011, 75, -65501, 1835011, 75, -196572, 1835011, 75, -131036, 1835011, 75, -65500, 1835011, 75, -196571, 1835011, 75, -131035, 1835011, 75, -65499, 1835011, 75, -196570, 1835011, 75, -131034, 1835011, 75, -65498, 1835011, 75, -196569, 1835011, 75, -131033, 1835011, 75, -65497, 1835011, 75, -196568, 1835011, 75, -131032, 1835011, 75, -65496, 1835011, 75, -196567, 1835011, 75, -131031, 1835011, 75, -65495, 1835011, 75, -196566, 1835011, 75, -131030, 1835011, 75, -65494, 1835011, 75, -196561, 1769475, 76, -131025, 1769475, 76, -65489, 1769475, 76, -65490, 1769475, 76, -131026, 1769475, 76, -196562, 1769475, 76, -65488, 1769475, 76, -196560, 1769475, 76, -131024, 1769475, 76, -131023, 1769475, 76, -131022, 1769475, 76, -65486, 1769475, 76, -65487, 1769475, 76, -196559, 1245187, 73, -131021, 3014659, 75, -65485, 3014659, 75, -131020, 2883587, 73, -65484, 2818051, 74, -65481, 2490371, 74, -131017, 2424835, 73, -65480, 2686979, 74, -131016, 2686979, 73, -65479, 2621443, 75, -131015, 2621443, 75, -196550, 2818051, 73, -131014, 2949123, 74, -65478, 2949123, 74, -196549, 2949123, 74, -131013, 2949123, 74, -65477, 2949123, 74, -65476, 2949123, 74, -131012, 2949123, 74, -196548, 2949123, 74)
 
-[node name="AnimatableBody2D" parent="." instance=ExtResource("8_ifr7y")]
-position = Vector2(8, -24)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(8, -35)
 scale = Vector2(1.11111, 1.3125)
 zoom = Vector2(10, 10)
 
-[node name="Tito" parent="." groups=["Tito"] instance=ExtResource("9_x0ans")]
-position = Vector2(45, -92)
+[node name="Tito" parent="." groups=["PERSONAJES"] instance=ExtResource("8_7po67")]
+position = Vector2(21, -43)
 
-[node name="INTERFAZ" parent="." instance=ExtResource("10_8cnoj")]
+[node name="Maton1" parent="." groups=["PERSONAJES"] instance=ExtResource("9_ejxhc")]
+position = Vector2(325, -3)
 
-[connection signal="child_entered_tree" from="TileMap" to="INTERFAZ" method="_on_tile_map_child_entered_tree"]
+[node name="Maton2" parent="." groups=["PERSONAJES"] instance=ExtResource("10_sidkh")]
+position = Vector2(395, 74)
+
+[node name="INTERFAZ" parent="." instance=ExtResource("9_xf1ds")]
+
+[connection signal="body_entered" from="Maton1" to="INTERFAZ" method="_on_maton_1_body_entered"]
+[connection signal="body_entered" from="Maton2" to="INTERFAZ" method="_on_maton_2_body_entered"]
