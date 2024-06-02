@@ -39,9 +39,11 @@ _data = {
 "SET_TEXTO": SubResource("Animation_kdgun")
 }
 
-[node name="INTERFAZ" type="CanvasLayer" groups=["Azufre", "Baron", "Carbon", "Maton1", "Maton2", "Mia", "Nitrato", "Tito"]]
+[node name="INTERFAZ" type="CanvasLayer" node_paths=PackedStringArray("Imagen", "Anim") groups=["Azufre", "Baron", "Carbon", "Maton1", "Maton2", "Mia", "Nitrato", "Tito"]]
 process_mode = 1
 script = ExtResource("1_2drki")
+Imagen = NodePath("FONDO/IMAGEN")
+Anim = NodePath("AnimationPlayer")
 
 [node name="FONDO" type="ColorRect" parent="."]
 offset_top = 486.0

@@ -920,7 +920,7 @@ _data = {
 "Run": SubResource("Animation_xgrfb")
 }
 
-[node name="Tito" type="CharacterBody2D"]
+[node name="Tito" type="CharacterBody2D" groups=["PERSONAJES"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_u2frd")
 
@@ -991,7 +991,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_lkaq4")
 
 [node name="TorsoSuperior" type="Sprite2D" parent="SkeletonParts"]
-position = Vector2(11.8733, 0.265046)
+position = Vector2(11.8733, 0.265049)
 rotation = 0.455582
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_iyqib")
@@ -1003,19 +1003,19 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_ociio")
 
 [node name="Cabeza" type="Sprite2D" parent="SkeletonParts"]
-position = Vector2(27.0147, -20.8596)
+position = Vector2(27.0146, -20.8596)
 rotation = 0.301403
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("13_3yxue")
 
 [node name="BrazoSupDer" type="Sprite2D" parent="SkeletonParts"]
-position = Vector2(-3.49941, -8.53184)
+position = Vector2(-3.4994, -8.53183)
 rotation = -0.037423
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_i2bec")
 
 [node name="ManoDer" type="Sprite2D" parent="SkeletonParts"]
-position = Vector2(-1.45961, 27.4081)
+position = Vector2(-1.45961, 27.408)
 rotation = -1.06523
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_vxbdv")
@@ -1044,7 +1044,7 @@ remote_path = NodePath("../../../../SkeletonParts/TorsoInferior")
 [node name="BodyUp" type="Bone2D" parent="Skeleton2D/base/BodyDown"]
 position = Vector2(0, -38)
 rotation = 0.23325
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(0.999391, -0.0348944, 0.0348944, 0.999391, 0, -38)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/base/BodyDown/BodyUp"]

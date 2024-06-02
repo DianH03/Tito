@@ -1,5 +1,8 @@
 extends CanvasLayer
 			#0     #1      #2       #3     #4    #5    #6       #7
+@export var Imagen: TextureRect
+@export var Anim: AnimationPlayer
+
 enum NPCS {Tito, Nitrato, Azufre, Carbon, Mia, Baron, Maton1, Maton2} 
 
 const Imagenes : Array = [
@@ -59,7 +62,7 @@ const secuenciaNPCEscena4 : Array = [0,5]
 
 #-------------------------------------------------
 var chats : int = 0
-
+ 
 var npc : int
 
 #Funcion mas importante
@@ -68,8 +71,8 @@ func poner_TEXTO (TEXTO:String, NPC:int, IMAGEN:Texture) -> void:
 	get_tree().paused = true
 	$TEXTO.text = TEXTO
 	npc = NPC
-	$IMAGEN.texture = IMAGEN
-	%ANIM.play("SET_TEXTO")
+	Imagen.texture = IMAGEN
+	Anim.play("SET_TEXTO")
 
 
 #Funcion de Mia fALTA
